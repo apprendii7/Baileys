@@ -529,10 +529,11 @@ export const makeChatsSocket = (config: SocketConfig) => {
 		const result = await query({
 			tag: 'iq',
 			attrs: {
-				to: jid,
-				type: 'get',
-				xmlns: 'w:profile:picture'
-			},
+                target: jid,
+				to: S_WHATSAPP_NET,
+                type: 'get',
+                xmlns: 'w:profile:picture'
+            },
 			content: [
 				{ tag: 'picture', attrs: { type, query: 'url' } }
 			]
